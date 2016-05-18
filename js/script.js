@@ -6,7 +6,10 @@ $('document').ready(function() {
 });
 
 function fBuzz(start, end) {
-  for (let i = start;i <= end;i++) {
+  var inc = 1;
+  if (start == end) {inc = 0;}
+  if (start < end) {inc = -1;}
+  for (let i = start;i != end + inc;i + inc) {
     if (i % 3 == 0 && i % 5 == 0) {
       $('body').append("<p>FizzBuzz</p>");
     } else if (i % 3 == 0) {
